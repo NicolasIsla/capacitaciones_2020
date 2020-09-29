@@ -64,11 +64,14 @@ while True:
         action = np.array([0.44, 0.0])
     
     if key== ord("a"):
-        action=np.array([0, 0.44])
+        action=np.array([0.1, 0.44])
     if key==ord("d"):
-        action=np.array([0,-0.44])
+        action=np.array([0.1 ,-0.44])
     if key==ord("s"):
-        action=np.array([-0.44,0])
+        action=np.array([-0.30,0])
+    if key== ord("e"):
+        action=np.array([0.0,1])
+    
 
     ### AGREGAR MÁS COMPORTAMIENTOS ###
     
