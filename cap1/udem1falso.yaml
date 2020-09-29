@@ -1,0 +1,71 @@
+
+tiles:
+- [floor    , curve_right    , straight  , straight          ,curve_left]
+- [floor    , straight      , grass     , asphalt           ,straight]
+- [floor    , straight/S    , grass     , straight           ,curve_left/W]
+
+
+objects:
+    
+- kind: duckie
+  pos: [2.5, 2.5]
+  rotate: 180
+  height: 0.25
+  optional: true
+- kind: duckie
+  pos: [0.5, 0.5]
+  rotate: 180
+  height: 0.25
+  optional: true
+- kind: duckie
+  pos: [1.5, 1.5]
+  rotate: 180
+  height: 0.25
+  optional: true
+
+- kind: duckie
+  pos: [2.0, 2.0]
+  rotate: 180
+  height: 0.25
+  optional: true
+- kind: duckie
+  pos: [1.5, 0.5]
+  rotate: 180
+  height: 0.25
+  optional: true
+  
+- kind: duckie
+  pos: [0.5, 2.5]
+  rotate: 180
+  height: 0.25
+  optional: true
+
+- kind: duckie
+  pos: [1.5, 1.9]
+  rotate: -90
+  height: 0.08
+  optional: true
+
+- kind: duckie
+  pos: [3.5, 3.9]
+  rotate: -90
+  height: 0.08
+  optional: true
+- kind: duckie
+  pos: [3.0, 1.9]
+  rotate: -90
+  height: 0.08
+  optional: true
+
+- kind: newnewcreeper
+  pos: [1.0, 2.9]
+  rotate: -90
+  height: 0.15
+  optional: true
+
+
+  
+
+
+  
+tile_size: 0.585
