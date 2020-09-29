@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+    #!/usr/bin/env python
 
 """
 Este programa permite mover al Duckiebot dentro del simulador
@@ -62,6 +62,13 @@ while True:
     # Esto es avanzar recto hacia adelante al apretar la tecla w
     if key == ord('w'):
         action = np.array([0.44, 0.0])
+    
+    if key== ord("a"):
+        action=np.array([0, 0.44])
+    if key==ord("d"):
+        action=np.array([0,-0.44])
+    if key==ord("s"):
+        action=no.array([-0.44,0])
 
     ### AGREGAR MÁS COMPORTAMIENTOS ###
 
