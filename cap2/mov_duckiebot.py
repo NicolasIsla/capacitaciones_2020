@@ -68,10 +68,10 @@ while True:
     if key==ord("d"):
         action=np.array([0,-0.44])
     if key==ord("s"):
-        action=no.array([-0.44,0])
+        action=np.array([-0.44,0])
 
     ### AGREGAR MÁS COMPORTAMIENTOS ###
-
+    
 
 
     # Se ejecuta la acción definida anteriormente y se retorna la observación (obs),
