@@ -92,9 +92,8 @@ if __name__ == '__main__':
         # Filtrar colores de la imagen en el rango utilizando
         mask = cv2.inRange(imagenHSV, lower_yellow, upper_yellow)
 
-        # Bitwise-AND entre máscara (mask) y original (obs) para visualizar lo filtrado
-        filtrado = cv2.bitwise_and(obs, obs, mask= mask)
-        filtrado =  cv2.cvtColor(filtrado, cv2.COLOR_RGB2HSV)
+        
+        
         # Se define kernel para operaciones morfológicas
         kernel = np.ones((5,5),np.uint8)
 
@@ -102,10 +101,12 @@ if __name__ == '__main__':
         # Esto corresponde a hacer un Opening
         # https://docs.opencv.org/trunk/d9/d61/tutorial_py_morphological_ops.html
         #Operacion morfologica erode
-        imagenerocionada = cv2.erode(filtrado, kernel, iterations = 1)
+        mask = cv2.erode(mask, kernel, iterations = 2)
         #Operacion morfologica dilate
-        imagenerocionada=cv2.dilate(imagenerocionada, kernel, iterations = 1)
-
+        mask= cv2.dilate(mask, kernel, iterations = 1)
+        
+        # Bitwise-AND entre máscara (mask) y original (obs) para visualizar lo filtrado
+        filtrado = cv2.bitwise_and(obs, obs, mask= mask)
         # Busca contornos de blobs
         # https://docs.opencv.org/trunk/d3/d05/tutorial_py_table_of_contents_contours.html
         contours, hierarchy = cv2.findContours(mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
@@ -126,7 +127,7 @@ if __name__ == '__main__':
         # con los bounding boxes dibujados
         cv2.imshow('patos', cv2.cvtColor(obs, cv2.COLOR_RGB2BGR))
         # Se muestra en una ventana llamada "filtrado" la imagen filtrada
-        cv2.imshow('filtrado', filtrado)
+        cv2.imshow('filtrado', cv2.cvtColor(filtrado, cv2.COLOR_RGB2BGR))
 
 
     # Se cierra el environment y termina el programa
