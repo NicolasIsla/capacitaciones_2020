@@ -90,9 +90,7 @@ if __name__ == '__main__':
         imagenHSV = cv2.cvtColor(obs, cv2.COLOR_RGB2HSV)
 
         # Filtrar colores de la imagen en el rango utilizando
-        mask = cv2.inRange(imagenHSV, lower_yellow, upper_yellow)
-
-        
+        mask = cv2.inRange(imagenHSV, lower_yellow, upper_yellow)      
         
         # Se define kernel para operaciones morfológicas
         kernel = np.ones((5,5),np.uint8)
@@ -120,14 +118,11 @@ if __name__ == '__main__':
                 #Dibujar rectangulo en el frame original
                 obs=cv2.rectangle(obs,(x,y),(x+w,y+h),(0,255,0),2)
 
-        
-
-
         # Se muestra en una ventana llamada "patos" la observación del simulador
         # con los bounding boxes dibujados
         cv2.imshow('patos', cv2.cvtColor(obs, cv2.COLOR_RGB2BGR))
         # Se muestra en una ventana llamada "filtrado" la imagen filtrada
-        cv2.imshow('filtrado', cv2.cvtColor(filtrado, cv2.COLOR_RGB2BGR))
+        cv2.imshow('patos sin alma', cv2.cvtColor(filtrado, cv2.COLOR_RGB2BGR))
 
 
     # Se cierra el environment y termina el programa
